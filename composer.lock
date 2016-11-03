@@ -1373,13 +1373,18 @@
             "dist": {
                 "type": "path",
                 "url": "/home/pdavila/Code/scool/curriculum",
-                "reference": "39648e12c6e7ae9423dccde89e60d1b15bf3c692",
+                "reference": "ce14856bff38b746d1f2ab38fafa0ae86f7f9011",
                 "shasum": null
             },
             "require": {
                 "laravel/framework": "5.3.*"
             },
             "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Scool\\Curriculum\\": "src"
+                }
+            },
             "license": [
                 "MIT"
             ],

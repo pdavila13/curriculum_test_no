@@ -166,6 +166,7 @@ return [
         /*
          * Package Service Providers...
          */
+        Scool\Curriculum\Providers\CurriculumServiceProvider::class,
 
         //
 
