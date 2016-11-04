@@ -1373,7 +1373,7 @@
             "dist": {
                 "type": "path",
                 "url": "/home/pdavila/Code/scool/curriculum",
-                "reference": "ce14856bff38b746d1f2ab38fafa0ae86f7f9011",
+                "reference": "f990039a3a4ab208fd1b9811f11dd55fbae947d3",
                 "shasum": null
             },
             "require": {
