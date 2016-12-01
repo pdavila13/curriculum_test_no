@@ -17,6 +17,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::group(['middleware' => 'auth'], function() {
+    Route::resource('sutdies', 'StudiesController');
+});
 
 Route::get('/test', function () {
     $study = new Study();

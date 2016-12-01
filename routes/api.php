@@ -16,3 +16,7 @@ use Illuminate\Http\Request;
 Route::get('/user', function (Request $request) {
     return $request->user();
 })->middleware('auth:api');
+
+Route::group(['prefix' => 'api/v1.0', 'middleware' => ['auth:api']], function () {
+    Route::resource('sutdies', 'StudiesController');
+});
