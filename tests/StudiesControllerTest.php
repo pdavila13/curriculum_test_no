@@ -6,13 +6,32 @@ use Illuminate\Foundation\Testing\DatabaseTransactions;
 
 class StudiesControllerTest extends TestCase
 {
+    use DatabaseMigrations;
+
     /**
-     * A basic test example.
+     * A test StudiesControllerTest.
      *
      * @return void
      */
-    public function testExample()
+    public function testIndex()
     {
-        $this->assertTrue(true);
+        //dd(route('studies.index'));
+        $user = factory(App\User::class)->create();
+        $this->actingAs($user);
+        /*
+         * Aquest dos mètodes son correctes per depurar
+         *
+         * dd($this->call('GET', 'studies'));
+         * $this->get('studies')->dump();
+         *
+         */
+        $this->get('studies');
+        $this->assertResponseOk();
+
+        /*
+         * 1) Preparation
+         * 2) Execution
+         * 3) Assertion
+         */
     }
 }
