@@ -8,14 +8,16 @@ class StudiesControllerTest extends TestCase
 {
     use DatabaseMigrations;
 
-    /**
-     * A test StudiesControllerTest.
-     *
-     * @return void
-     */
+//    public function testIndexNotLogin()
+//    {
+//        $this->get('studies');
+//        $this->assertRedirectedTo('login');
+//    }
+
     public function testIndex()
     {
         //dd(route('studies.index'));
+        //$studies = factory(Scool\Curriculum\Models\Study::class,50)->create();
         $user = factory(App\User::class)->create();
         $this->actingAs($user);
         /*
@@ -27,6 +29,10 @@ class StudiesControllerTest extends TestCase
          */
         $this->get('studies');
         $this->assertResponseOk();
+        $this->assertViewHas('studies');         //Comprova una vista estatica
+
+        $studies = $this->response->getOriginalContent()->getData()['studies'];
+        $this->assertInstanceOf(Illuminate\Database\Eloquent\Collection::class,$studies);
 
         /*
          * 1) Preparation
