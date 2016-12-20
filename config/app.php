@@ -168,7 +168,7 @@ return [
          */
         Scool\Curriculum\Providers\CurriculumServiceProvider::class,
         Prettus\Repository\Providers\RepositoryServiceProvider::class,
-
+        Spatie\Menu\Laravel\MenuServiceProvider::class,
         //
 
         /*
@@ -180,6 +180,7 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
+
         /*
          * Acacha Llum Service Providers...
          *
@@ -188,6 +189,10 @@ return [
         Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
         Barryvdh\Debugbar\ServiceProvider::class,
         Acacha\AdminLTETemplateLaravel\Providers\AdminLTETemplateServiceProvider::class,
+        Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
+        Barryvdh\Debugbar\ServiceProvider::class,
+        Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
+        Barryvdh\Debugbar\ServiceProvider::class,
         Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
         Barryvdh\Debugbar\ServiceProvider::class,
         #llum_providers
@@ -247,6 +252,11 @@ return [
          */
         'Debugbar' => Barryvdh\Debugbar\Facade::class,
         'AdminLTE' => Acacha\AdminLTETemplateLaravel\Facades\AdminLTE::class,
+        'Menu'     => Spatie\Menu\Laravel\Menu::class,
+        'Link'     => Spatie\Menu\Laravel\Link::class,
+        'Html'     => Spatie\Menu\Laravel\Html::class,
+        'Debugbar' => Barryvdh\Debugbar\Facade::class,
+        'Debugbar' => Barryvdh\Debugbar\Facade::class,
         'Debugbar' => Barryvdh\Debugbar\Facade::class,
         #llum_aliases
 
