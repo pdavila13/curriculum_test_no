@@ -28,6 +28,8 @@ Route::group(['middleware' => 'auth'], function () {
 
 });
 
+#adminlte_routes
+
 Route::get('/test', function () {
 
     DB::listen(function ($event) {
