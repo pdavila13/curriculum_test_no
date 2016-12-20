@@ -22,41 +22,51 @@
                     </div>
                     <!-- /.box-header -->
                     <div class="box-body">
-                        <div class="alert alert-success alert-dismissible">
-                            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-                            <h4><i class="icon fa fa-check"></i> Done!</h4>
-                            Studies created OK!
-                        </div>
+                        @if(Session::has('message'))
+                            <div class="alert alert-success alert-dismissible">
+                                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                                <h4><i class="icon fa fa-check"></i> Done!</h4>
+                                {{ session('message') }}
+                            </div>
+                        @endif
 
-                        <div class="alert alert-danger alert-dismissible">
-                            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-                            <h4><i class="icon fa fa-ban"></i> Oops!</h4>
-                            Something is wrong!
-                        </div>
 
-                        <form role="form" action="/studies" method="post">
+                        {{--<div class="alert alert-danger alert-dismissible">--}}
+                            {{--<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>--}}
+                            {{--<h4><i class="icon fa fa-ban"></i> Oops!</h4>--}}
+                            {{--Something is wrong!--}}
+                        {{--</div>--}}
+
+                        <form role="form" action="/studies" method="post" id="createStudy">
                             {{ csrf_field() }}
-                            <!-- text input -->
-                                <input type="hidden" name="law_id" value="1">
-                            <div class="form-group">
-                                <label>Name</label>
-                                <input type="text" class="form-control" placeholder="Name">
-                            </div>
 
-                            <div class="form-group has-warning">
-                                <label class="control-label" for="inputWarning"><i class="fa fa-bell-o"></i> Input with
-                                    warning</label>
-                                <input type="text" class="form-control" id="inputWarning" placeholder="Name" name="name">
-                                <span class="help-block">Name is required</span>
-                            </div>
+                            {{--<input type="hidden" name="law_id" value="1">--}}
 
-                            <input type="submit" value="Create">
+                            <?php
+                                $warning = "";
+                                if ($errors->has('name')) {
+                                    $warning = "has-warning";
+                                }
+                            ?>
+
+                            <div class="form-group {{ $warning }}">
+                                <label class="control-label" for="inputWarning">
+                                    @if ($errors->has('name'))
+                                        <i class="fa fa-bell-o"></i> Name</label>
+                                    @endif
+
+                                <input type="text" class="form-control" placeholder="Name" name="name" value="{{ old('name') }}">
+
+                                @foreach ($errors->get('name') as $message)
+                                    <span class="help-block">{{ $message }}</span>
+                                @endforeach
+                            </div>
                         </form>
                     </div>
                     <!-- /.box-body -->
 
                     <div class="box-footer">
-                        <button type="submit" class="btn btn-primary">Create</button>
+                        <button type="submit" class="btn btn-primary" onclick="document.getElementById('createStudy').submit();">Create</button>
                     </div>
                 </div>
 
