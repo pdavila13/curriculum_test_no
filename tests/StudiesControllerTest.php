@@ -35,22 +35,7 @@ class StudiesControllerTest extends TestCase
         $this->get('studies');
         $this->assertRedirectedTo('login');
     }
-
-    private function createDummyStudies()
-    {
-        $study1 = new Study();
-        $study2 = new Study();
-        $study3 = new Study();
-
-        $studies = [
-            $study1,
-            $study2,
-            $study3
-        ];
-
-        return collect($studies);
-    }
-
+    
     public function testIndex()
     {
         //Fase 1: Preparation --> isolation/mocking
@@ -61,7 +46,6 @@ class StudiesControllerTest extends TestCase
         $this->repository->shouldReceive('pushCriteria')->once();
 
         $this->app->instance(StudyRepository::class, $this->repository);
-
 
         /*
          * Aquest dos mètodes son correctes per depurar
@@ -88,6 +72,21 @@ class StudiesControllerTest extends TestCase
 
 //        $this->post('studies')->dump();
 //        $this->assertRedirectedToRoute('studies.create');        //comprovar si ha un redireccionament a una ruta
+    }
+
+    private function createDummyStudies()
+    {
+        $study1 = new Study();
+        $study2 = new Study();
+        $study3 = new Study();
+
+        $studies = [
+            $study1,
+            $study2,
+            $study3
+        ];
+
+        return collect($studies);
     }
 
     public function login()

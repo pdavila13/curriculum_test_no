@@ -38,7 +38,7 @@
                         {{--</div>--}}
 
                         <form role="form" action="/studies" method="post" id="createStudy">
-                            {{ csrf_field() }}
+                            {!! csrf_field() !!}
 
                             {{--<input type="hidden" name="law_id" value="1">--}}
 
