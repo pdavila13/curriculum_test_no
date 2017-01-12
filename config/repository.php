@@ -219,19 +219,21 @@ return [
     |
     */
     'generator'  => [
-        'basePath'      => app_path(),
-        'rootNamespace' => 'App\\',
+        'basePath'      => base_path(). '/vendor/scool/curriculum/src',
+        'databasePath'  => base_path(). '/vendor/scool/curriculum/database',
+        'rootNamespace' => 'Scool\\Curriculum\\',
+        'stubsOverridePath' => app_path(),
         'paths'         => [
-            'models'       => 'Entities',
+            'models'       => 'Models',
             'repositories' => 'Repositories',
             'interfaces'   => 'Repositories',
             'transformers' => 'Transformers',
             'presenters'   => 'Presenters',
             'validators'   => 'Validators',
             'controllers'  => 'Http/Controllers',
-            'provider'     => 'RepositoryServiceProvider',
+            'requests'     => 'Http/Requests',
+            'provider'     => 'CurriculumServiceProvider',
             'criteria'     => 'Criteria',
-            'stubsOverridePath' => app_path()
         ]
     ]
 ];
