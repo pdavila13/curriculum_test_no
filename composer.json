@@ -13,7 +13,8 @@
         "acacha/stateful-eloquent": "dev-master",
         "scool/curriculum": "dev-master",
         "acacha/l5-repository": "dev-master",
-        "spatie/laravel-menu": "^2.0"
+        "spatie/laravel-menu": "^2.0",
+        "spatie/laravel-permission": "^1.6"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
