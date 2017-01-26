@@ -1,8 +1,9 @@
 {
     "version": 2,
     "paths": [
-        "../../scool/curriculum",
-        "../../stateful-eloquent",
+        "../curriculum",
+        "../scool/foundation",
+        "../../acacha/stateful-eloquent",
         "../../acacha/names",
         "../../acacha/l5-repository"
     ]
