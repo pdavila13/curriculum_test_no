@@ -56,7 +56,7 @@ return [
     */
 
     'from' => [
-        'address' => 'hello@example.com',
+        'address' => 'info@sparkpostbox.com',
         'name' => 'Example',
     ],
 
