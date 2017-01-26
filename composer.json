@@ -9,7 +9,7 @@
         "laravel/framework": "5.3.*",
         "barryvdh/laravel-ide-helper": "^2.2",
         "barryvdh/laravel-debugbar": "^2.3",
-        "acacha/admin-lte-template-laravel": "dev-master",
+        "acacha/admin-lte-template-laravel": "^3.3",
         "acacha/stateful-eloquent": "dev-master",
         "acacha/l5-repository": "dev-master",
         "acacha/names": "dev-master",
